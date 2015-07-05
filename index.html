@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript Array Methods</title>
+	<script>
+	var units =[
+	{name: "Ernie", GBHD: 500, GBHDFree: 300, OS: "Windows"}, 
+	{name: "Bert", GBHD: 800, GBHDFree: 350, OS: "MacOS"}, 
+	{name: "Kermit", GBHD: 600, GBHDFree: 380, OS: "Windows"},
+	{name: "Oscar", GBHD: 450, GBHDFree: 200, OS: "Windows"},
+	{name: "Grover", GBHD: 700, GBHDFree: 300, OS: "MacOS"},	
+	{name: "Count", GBHD: 700, GBHDFree: 250, OS: "MacOS"}
+	];
+	
+	var filterOS = function(u){
+		return u.OS == "MacOS"
+	}
+	
+	var mostHDFree = function(start, current){
+		if(start.GBHDFree > current.GBHDFree) return start;
+		else return current;
+	}
+	
+	console.log("MacOS with most HD space free",units.filter(filterOS).reduce(mostHDFree));
+	
+	</script>
+  </head>
+  <body>
+    <h1>Combine Methods</h1>
+  </body>
+</html>
